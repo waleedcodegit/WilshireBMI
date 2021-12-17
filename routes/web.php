@@ -19,11 +19,23 @@ Route::view('/admin/add-slots', 'welcome');
 Route::view('/admin/slots', 'welcome');
 Route::view('/admin/appointments', 'welcome');
 
+Route::view('/' , 'Front.Home');
+Route::view('/vision-mission' , 'Front.vision-mission');
+Route::view('/history' , 'Front.history');
+Route::view('/executive-committee' , 'Front.executive-committee');
+Route::view('/members' , 'Front.members');
+Route::view('/summit' , 'Front.summit');
+Route::view('/guideline' , 'Front.guideline');
+Route::view('/PMMSG' , 'Front.PMMSG');
+Route::view('/events' , 'Front.events');
+Route::view('/diabetes-events' , 'Front.diabetes-events');
+Route::view('/contact' , 'Front.contact');
 
-Route::get('/', function () {
+
+Route::get('/admin', function () {
     return view('welcome');
 });
-Route::get('/{path?}', function () {
+Route::get('/admin{path?}', function () {
     return view('welcome');
 });
 
