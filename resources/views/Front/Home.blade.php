@@ -280,7 +280,7 @@
     <div class="text-center">
       <img src="img/calendar.png" style="width:150px" class="mb-3">
       <h4>Events are not available. check back later for Upcoming events.</h4>
-    </div>-->
+    </div>
     <div class="row">
       <div class="col-md-12 text-center"> <a href="PMMSG.html" > View all events > </a> </div>
     </div>

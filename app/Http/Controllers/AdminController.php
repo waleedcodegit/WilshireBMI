@@ -8,6 +8,8 @@ use App\Appointment;
 use App\Client;
 use App\Date;
 use App\Slot;
+use App\Event;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -357,5 +359,58 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function add_event(Request $request){
+        
+        $validator = Validator::make($request->all(), [
+            'eventname' => 'required',
+            'image' => 'required',
+            'description' => 'required',
+            'startdate' => 'required',
+            'enddate' => 'required',
+        ]);
+        if($validator->fails()){
+            $response = ['status' => 219 , 'msg' => $validator->errors()->first() , 
+            'errors' => $validator->errors()];
+            return $response;
+        }else{
+            $event = new Event();
+            $event->event_name = $request->eventname;
+            $event->image = $request->image;
+            $event->description = $request->description;
+            $event->startdate = $request->startdate;
+            $event->enddate = $request->enddate;
+            $event->save();
+            $response = ['status' => 200 , 'msg' => 'event added.'];
+            return $response;
+        }
+    }
+    public function get_events(){
+        $event = Event::all();
+        $response = ['message' => 'success', 'event' => $event];
+        return $response;
+    }
+    public function get_event_by_id(Request $request){
+        $event = Event::find($request->id);
+        return $event;
+    }
+    public function update_event(Request $request){
+
+        $event = Event::find($request->id);
+        $event->event_name = $request->eventname;
+        $event->image = $request->image;
+        $event->description = $request->description;
+        $event->startdate = $request->startdate;
+        $event->enddate = $request->enddate;
+        $event->save();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Client Updated Successfully',
+        ]);
+    }
+    public function delete_event(Request $request){
+        $event = Event::find($request->id);
+        $event->delete();
     }
 }

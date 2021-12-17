@@ -19,6 +19,7 @@ class ManageClients extends Component {
                 clients:res.data
             })
         })  
+        
     }
     delete_client(id){
         Axios.post('/api/delete_client',{id:id}).then(res=>{

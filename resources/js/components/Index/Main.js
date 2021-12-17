@@ -7,6 +7,9 @@ import EditClient from '../ManageClients/EditClient';
 import ManageClients from '../ManageClients/ManageClients';
 import AddSlots from '../ManageSlots/AddSlots';
 import ManageSlot from '../ManageSlots/ManageSlot';
+import AddEvents from '../ManageEvent/AddEvents';
+import EventsList from '../ManageEvent/EventsList';
+import EditEvents from '../ManageEvent/Editevents';
  
 class Main extends Component {
     constructor(props) {
@@ -24,6 +27,10 @@ class Main extends Component {
                 <Route  path="/admin/add-slots" component={AddSlots}></Route>
                 <Route path="/admin/slots" component={ManageSlot}></Route>
                 <Route path="/admin/appointments" component={ManageAppointments}></Route>
+
+                <Route  path="/admin/add-events" component={AddEvents}></Route>
+                <Route path="/admin/list-events" component={EventsList}></Route>
+                <Route path="/admin/edit-events/:id" component={EditEvents}></Route>
 
             </div>
         );

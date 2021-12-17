@@ -57,29 +57,36 @@ class App extends Component {
                             <ul className="sidebar-menu">
                                 <li className="menu-header">Main</li>
                                 <li className="dropdown active">
-                                    <a href="index.html" className="nav-link"><i data-feather="monitor" /><span>Dashboard</span></a>
+                                    <a href="/admin" className="nav-link"><i data-feather="monitor" /><span>Dashboard</span></a>
                                 </li>
                                 <li className="dropdown">
+                                    <a href="#" className="menu-toggle nav-link has-dropdown"><i data-feather="briefcase" /><span>Manage Events</span></a>
+                                    <ul className="dropdown-menu">
+                                        <li><Link className="nav-link" to="/admin/add-events">Create Events</Link></li>
+                                        <li><Link className="nav-link" to="/admin/list-events">Events List</Link></li>
+                                    </ul>
+                                </li>
+                                {/* <li className="dropdown">
                                     <a href="#" className="menu-toggle nav-link has-dropdown"><i data-feather="briefcase" /><span>Manage Slots</span></a>
                                     <ul className="dropdown-menu">
                                         <li><Link className="nav-link" to="/admin/add-slots">Create Slots</Link></li>
                                         <li><Link className="nav-link" to="/admin/slots">Slots</Link></li>
                                     </ul>
-                                </li>
-                                <li className="dropdown">
+                                </li> */}
+                                {/* <li className="dropdown">
                                     <a href="#" className="menu-toggle nav-link has-dropdown"><i data-feather="briefcase" /><span>Manage Appointments</span></a>
                                     <ul className="dropdown-menu">
-                                        {/* <li><a className="nav-link" href="widget-chart.html">Create Appointment</a></li> */}
+                                        <li><a className="nav-link" href="widget-chart.html">Create Appointment</a></li>
                                         <li><Link className="nav-link" to="/admin/appointments">Appointments</Link></li>
                                     </ul>
-                                </li>
-                                <li className="dropdown">
+                                </li> */}
+                                {/* <li className="dropdown">
                                     <a href="#" className="menu-toggle nav-link has-dropdown"><i data-feather="briefcase" /><span>Manage Users</span></a>
                                     <ul className="dropdown-menu">
                                         <li><Link className="nav-link" to="/admin/add-user">Create User</Link></li>
                                         <li><Link className="nav-link" to="/admin/users">Users</Link></li>
                                     </ul>
-                                </li>
+                                </li> */}
                             </ul>
                         </aside>
                     </div>

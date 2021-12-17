@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::view('/admin/add-events', 'welcome');
+Route::view('/admin/list-events', 'welcome');
+Route::view('/admin/edit-events/{id}', 'welcome');
 
 Route::view('/admin/add-user', 'welcome');
 Route::view('/admin/edit-user/{id}', 'welcome');
@@ -31,6 +34,10 @@ Route::view('/events' , 'Front.events');
 Route::view('/diabetes-events' , 'Front.diabetes-events');
 Route::view('/contact' , 'Front.contact');
 
+// Route::get('/admin', function () {
+
+
+
 
 Route::get('/admin', function () {
     return view('welcome');
@@ -38,8 +45,6 @@ Route::get('/admin', function () {
 Route::get('/admin{path?}', function () {
     return view('welcome');
 });
-
-
 
 // Route::view('/admin', 'welcome');
 // Route::view('/admin', 'welcome');

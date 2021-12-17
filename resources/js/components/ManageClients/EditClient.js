@@ -19,18 +19,18 @@ class EditClient extends Component {
         }
     }
     componentDidMount(){
-       Axios.post('/api/get_client_by_id',{ id:this.props.match.params.id}).then(res=>{
-           console.log(res);
-           this.setState({
-               business_name:res.data.business_name,
-               business_address:res.data.business_address,
-               username:res.data.username,
-               password:res.data.password,
-               confirm_password:res.data.password,
-               status:res.data.status,
-               telephone:res.data.phone
-           })
-       })
+    //    Axios.post('/api/get_client_by_id',{ id:this.props.match.params.id}).then(res=>{
+    //        console.log(res);
+    //        this.setState({
+    //            business_name:res.data.business_name,
+    //            business_address:res.data.business_address,
+    //            username:res.data.username,
+    //            password:res.data.password,
+    //            confirm_password:res.data.password,
+    //            status:res.data.status,
+    //            telephone:res.data.phone
+    //        })
+    //    })
     }
     business_address(e){
         this.setState({
