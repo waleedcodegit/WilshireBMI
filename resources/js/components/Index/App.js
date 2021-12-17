@@ -51,7 +51,7 @@ class App extends Component {
                             <div className="sidebar-brand">
                                 <a href="/">
                                  {/* <img alt="image" src="assets/img/logo.png" className="header-logo" /> */}
-                                 <span className="logo-name">GlossMeUp</span>
+                                 <span className="logo-name">Safes Endocrine Backend</span>
                                 </a>
                             </div>
                             <ul className="sidebar-menu">

@@ -278,6 +278,10 @@
     </div>-->
 	  
     <div class="text-center">
+      {{-- @foreach ($event as $i)
+      <li>{{$i->event_name}}</li>
+          
+      @endforeach --}}
       <img src="img/calendar.png" style="width:150px" class="mb-3">
       <h4>Events are not available. check back later for Upcoming events.</h4>
     </div>

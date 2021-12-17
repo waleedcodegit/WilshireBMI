@@ -413,4 +413,12 @@ class AdminController extends Controller
         $event = Event::find($request->id);
         $event->delete();
     }
+    public function get_coming_events(){
+        $today = Carbon::today();
+        $event = Event::whereDate('startdate' ,'>', $today)
+        ->get();
+        
+        // $response = ['message' => 'success', 'event' => $event];
+        return view('Home',['event'=> $event]);
+    }
 }

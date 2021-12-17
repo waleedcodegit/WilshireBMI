@@ -49,3 +49,4 @@ Route::get('/admin{path?}', function () {
 // Route::view('/admin', 'welcome');
 // Route::view('/admin', 'welcome');
 // Route::view('/admin', 'welcome');
+Route::get('comingevents','AdminController@comingevents');

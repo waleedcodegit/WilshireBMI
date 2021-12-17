@@ -63,7 +63,7 @@ class EventsList extends Component {
                  
                <div className="container " >
                <div className="top_section_title_div">
-                    <h2 className="section_title">Manage Slots</h2>
+                    <h2 className="section_title">Alll Events List</h2>
                 </div>
                     <table id="drop_table"
                               className="table table-light table-hover table-striped mt-5">
