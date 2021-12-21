@@ -4,7 +4,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="header_top_wrap d-flex justify-content-between align-items-center">
-              <div class="logo"> <a href="/"> <img src="img/logo.png" alt=""> </a> </div>
+              <div class="logo"> <a href="/"> <img src="/img/logo.png" alt=""> </a> </div>
               <div class="text_wrap d-flex">
                 <p><span class="contact-info__icon"><i class="ti-email"></i></span><span><a href="/mailto:info@safes-endocrine.com">safes.secretariat@gmail.com</a></span></p>
                

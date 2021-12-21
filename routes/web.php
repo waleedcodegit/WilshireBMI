@@ -25,6 +25,8 @@ Route::view('/admin/appointments', 'welcome');
 Route::any('/' , 'AdminController@get_coming_events');
 Route::view('/vision-mission' , 'Front.vision-mission');
 Route::view('/history' , 'Front.history');
+// Route::get('/{path?}', 'app\Http\Controllers\AdminController@get_event_description');
+Route::any('/event/{slug}' , 'AdminController@get_event_description');
 Route::view('/executive-committee' , 'Front.executive-committee');
 Route::view('/members' , 'Front.members');
 Route::view('/summit' , 'Front.summit');
@@ -50,3 +52,5 @@ Route::get('/admin{path?}', function () {
 // Route::view('/admin', 'welcome');
 // Route::view('/admin', 'welcome');
 Route::get('comingevents','AdminController@comingevents');
+
+Route::get('/diabetes-events','AdminController@get_all_events');

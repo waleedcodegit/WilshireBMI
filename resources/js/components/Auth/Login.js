@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
+import toast from 'react-hot-toast';
 import Swal from 'sweetalert2'
 class Login extends Component {
     constructor(props) {
@@ -51,19 +52,21 @@ class Login extends Component {
             if (res.data.status == 200) {
                 window.localStorage.setItem('testapistring', res.data.admin.token);
                 this.props.history.push('/admin');
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Login Successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                toast.success('Login Successfully');
+                // Swal.fire({
+                //     icon: 'success',
+                //     title: 'Login Successfully',
+                //     showConfirmButton: false,
+                //     timer: 1500
+                // })
             } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: res.data.msg,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                toast.error(res.data.msg);
+                // Swal.fire({
+                //     icon: 'error',
+                //     title: res.data.msg,
+                //     showConfirmButton: false,
+                //     timer: 1500
+                // })
             }
         })
     }

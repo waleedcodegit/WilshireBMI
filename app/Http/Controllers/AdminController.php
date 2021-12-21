@@ -376,10 +376,12 @@ class AdminController extends Controller
         }else{
             $event = new Event();
             $event->event_name = $request->eventname;
+            $event->slug = strtolower(str_replace(' ', '-' , $request->eventname));
             $event->image = $request->image;
             $event->description = $request->description;
             $event->startdate = $request->startdate;
             $event->enddate = $request->enddate;
+            // $event->file = $request->file;
             $event->save();
             $response = ['status' => 200 , 'msg' => 'event added.'];
             return $response;
@@ -398,6 +400,7 @@ class AdminController extends Controller
 
         $event = Event::find($request->id);
         $event->event_name = $request->eventname;
+        $event->slug = strtolower(str_replace(' ', '-' , $request->eventname));
         $event->image = $request->image;
         $event->description = $request->description;
         $event->startdate = $request->startdate;
@@ -430,5 +433,21 @@ class AdminController extends Controller
         //return view::make('Home' ,compact('event'));  
         // view()->share('event',$event); 
         // return view('Home'); 
+        public function get_event_description(Request $request){
+        
+            $description = Event::where('slug',$request->slug)->first();
+            if($description){
+                // dd($description);
+                return view ('Front.EventDescription')->with('description',$description);
+                // return $description;
+            }
+        }
+        public function get_all_events(){
+            $event = Event::all();
+            if($event){
+                // dd($event);
+            return view ('Front.diabetes-events')->with('event',$event);
+        }
+    }
     
 }

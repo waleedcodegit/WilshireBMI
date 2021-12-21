@@ -67,10 +67,10 @@
                     @if($size > 0)
                     @foreach($event as $key => $data)
                         
-                        <div class="col-lg-3 col-md-6 ml-auto mr-auto">
-                        <div class="single__news">
-                        <div class="thumb"> <a href="diabetes10"> <img src="{{$data->image}}" alt=""> <span class="badge">{{$data->startdate}}</span> </a>
-                            <div class="news_info"> <a href="PMMSG">
+                        <div class="col-lg-3 col-md-6 ml-auto mr-auto" >
+                        <div class="single__news" style="width:150px;">
+                        <div class="thumb"> <a href="/event/{{$data->slug}}"> <img src="{{$data->image}}" alt=""style="height:230px; width:200px;"> <span class="badge">{{$data->startdate}}</span> </a>
+                            <div class="news_info"> <a href="/event/{{$data->slug}}">
                             <h4>{{$data->event_name}}<i class="ti-angle-right rt-side"></i></h4>
                             </a>
                             </p>

@@ -46,6 +46,12 @@ class AddEvents extends Component {
             startdate:e.target.value
         })
     }
+    // file(e){
+    //     this.setState({
+    //         file:e.target.value
+    //     })
+    // }
+ 
     Image(event) {
         if (event.target.files) {
             const files = Array.from(event.target.files);
@@ -101,13 +107,18 @@ class AddEvents extends Component {
                         </div>
                         <div className="row col-md-12">
                             <div class="form-group input_div col-md-12">
-                                <label className="input_label" for="exampleInputEmail1">Event Image</label>
+                                <label className="input_label" for="exampleInputEmail1">Event Image<span>  (image size 1200*638)</span></label>
                                 <input onChange={this.Image.bind(this)} type="file"  class="form-control "  aria-describedby="emailHelp"></input>
                                 <img src={this.state.image} style={{width:'50%'}}></img>
                             </div>
+                             {/* <div class="form-group input_div col-md-6">
+                                <label className="input_label" for="exampleInputEmail1">PDF File</label>
+                                <input onChange={this.file.bind(this)} type="file"  class="form-control "  aria-describedby="emailHelp"></input>
+                                <img src={this.state.image} style={{width:'50%'}}></img>
+                            </div>  */}
                            
                         </div>
-                        <div className="row col-md-12">
+                        <div className="row col-md-12" style={{height:"50px"}}>
                         <div class="form-group input_div col-md-12">
                             <label className="input_label" for="exampleInputEmail1">Description</label>
                                      <ReactQuill value={this.state.description} class="form-control "  aria-describedby="emailHelp" onChange={this.Description.bind(this)}/>

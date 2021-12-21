@@ -44,7 +44,7 @@ class EventsList extends Component {
     delete_client(id){
         Axios.post('/api/delete_event',{id:id}).then(res=>{
             this.componentDidMount();
-            toast.success('Slot Deleted Successfully');
+            toast.success('Event Deleted Successfully');
         })
     }
     client_id(e){
@@ -71,8 +71,8 @@ class EventsList extends Component {
                                     <tr  style={{fontWeight:'bold'}}>
                                         <td>Sr.</td>
                                        
-                                        <td>Name</td>
-                                        <td>Description</td>  
+                                        <td>Event Name</td>
+                                        <td>Slug</td>  
                                         <td>Start Time</td>
                                         <td>End Time</td>
                                         <td>Image</td>
@@ -88,7 +88,7 @@ class EventsList extends Component {
                                                 <tr key={index}>
                                                     <td>{index+1}</td>
                                                     <td>{data.event_name}</td>
-                                                    <td>{data.description}</td>
+                                                    <td>{data.slug}</td>
                                                     <td>{data.startdate}</td>
                                                     <td>{data.enddate}</td>
                                                     <td><img src={data.image } style={{width:'100px'}}></img></td>
