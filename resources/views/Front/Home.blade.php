@@ -53,119 +53,51 @@
 <!-- slider_area_end -->
 <!-- recent_news_area_start  -->
 <div class="recent_news_area section__padding">
-  <div class="container">
-	  <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <div class="section_title text-center mb-70">
-          <h3 class="mb-45">Upcoming Events</h3>
-        </div>
-      </div>
-    </div>
-	  
-	  <div class="client-section ">
-		<div class="container">
-			<div id="client-carousel" class="client-slider">
-				<!--<div class=" ml-auto mr-auto">
-        <div class="single__news">
-          <div class="thumb"> <a href="diabetes-agenda.html"> <img src="img/news15.png" alt=""> <span class="badge"><br>
-            </span> </a>
-            <div class="news_info"> <a href="PMMSG.html">
-              <h4>SAFES Virtual Meet Agenda 2021<i class="ti-angle-right rt-side"></i></h4>
-              </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>-->
-	<!--<div class=" ml-auto mr-auto">-->
- <!--       <div class="single__news">-->
- <!--         <div class="thumb"> <a href="diabetes10-12.html"> <img src="img/news14.png" alt=""> <span class="badge">DEC<br>-->
- <!--           10-12</span> </a>-->
- <!--           <div class="news_info"> <a href="PMMSG.html">-->
- <!--             <h4>Endocrine Society of India 2021<i class="ti-angle-right rt-side"></i></h4>-->
- <!--             </a>-->
- <!--             </p>-->
- <!--           </div>-->
- <!--         </div>-->
- <!--       </div>-->
- <!--     </div>-->
- <!--   <div class=" ml-auto mr-auto">-->
- <!--       <div class="single__news">-->
- <!--         <div class="thumb"> <a href="virtual-meet-agenda.html"> <img src="img/news16.jpg" alt=""> <span class="badge">DEC<br>-->
- <!--           10-12</span> </a>-->
- <!--           <div class="news_info"> <a href="virtual-meet-agenda.html">-->
- <!--             <h4>Endocrine Society of India 2021<i class="ti-angle-right rt-side"></i></h4>-->
- <!--             </a>-->
- <!--             </p>-->
- <!--           </div>-->
- <!--         </div>-->
- <!--       </div>-->
- <!--     </div>-->
-			<!--	<div class=" ml-auto mr-auto">
-        <div class="single__news">
-          <div class="thumb"> <a href="diabetes13-14.html"> <img src="img/news13.png" alt=""> <span class="badge">NOV<br>
-            </span> </a>
-            <div class="news_info"> <a href="PMMSG.html">
-              <h4>International Endocrine Conference 2021<i class="ti-angle-right rt-side"></i></h4>
-              </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-			<div class=" ml-auto mr-auto">
-        <div class="single__news">
-          <div class="thumb"> <a href="diabetes9.html"> <img src="img/news10.png" alt=""> <span class="badge">NOV<br>
-            </span> </a>
-            <div class="news_info"> <a href="PMMSG.html">
-              <h4>Busting Myths True<i class="ti-angle-right rt-side"></i></h4>
-              </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-	  	<div class=" ml-auto mr-auto">
-        <div class="single__news">
-          <div class="thumb"> <a href="diabetes10.html"> <img src="img/news11.png" alt=""> <span class="badge">NOV<br>
-            </span> </a>
-            <div class="news_info"> <a href="PMMSG.html">
-              <h4>Busting Myths False<i class="ti-angle-right rt-side"></i></h4>
-              </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-		<div class=" ml-auto mr-auto">
-        <div class="single__news">
-          <div class="thumb"> <a href="diabetes.html"> <img src="img/news12.png" alt=""> <span class="badge">NOV<br>
-            </span> </a>
-            <div class="news_info"> <a href="PMMSG.html">
-              <h4>WDD 2021 Calories Exposed<i class="ti-angle-right rt-side"></i></h4>
-              </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-<div class=" ml-auto mr-auto">
-        <div class="single__news">
-          <div class="thumb"> <a href="diabetes13-14.html"> <img src="img/news9.png" alt=""> <span class="badge">NOV<br>
-            </span> </a>
-            <div class="news_info"> <a href="PMMSG.html">
-              <h4>SAFES and WDD 2021<i class="ti-angle-right rt-side"></i></h4>
-              </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-				
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <!-- Upcoming Events Heading -->
+                <div class="section_title text-center mb-70">
+                <h3 class="mb-45">Upcoming Events</h3>
+                </div>
 
+                <!-- Upcoming Events From DB -->
+                <div class="row text-center mt-5 py-5">
+                    <?php $size = sizeof($event)?>
+                    @if($size > 0)
+                    @foreach($event as $key => $data)
+                        
+                        <div class="col-lg-3 col-md-6 ml-auto mr-auto">
+                        <div class="single__news">
+                        <div class="thumb"> <a href="diabetes10"> <img src="{{$data->image}}" alt=""> <span class="badge">{{$data->startdate}}</span> </a>
+                            <div class="news_info"> <a href="PMMSG">
+                            <h4>{{$data->event_name}}<i class="ti-angle-right rt-side"></i></h4>
+                            </a>
+                            </p>
+                            </div>
+                        </div>
+                        </div>
+                        </div>  
+                    @endforeach
+                    @else
+                        <div class="text-center ml-auto mr-auto">
+                        <img src="img/calendar.png" style="width:150px" class="mb-3">
+                        <h4>Events are not available. check back later for Upcoming events.</h4>
+                        </div>
+                    @endif
+                </div>
+
+                <!-- ========Events Ends here======== -->
+                
+                <!-- Wiew all Event link -->
+                <div class="text-center">
+                <div class="col-md-12 text-center"> <a href="PMMSG" > View all events > </a> </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
 
 	  
@@ -277,7 +209,7 @@
 
     </div>-->
 	  
-    <div class="text-center">
+    <!-- <div class="text-center">
       {{-- @foreach ($event as $i)
       <li>{{$i->event_name}}</li>
           
@@ -287,9 +219,8 @@
     </div>
     <div class="row">
       <div class="col-md-12 text-center"> <a href="PMMSG.html" > View all events > </a> </div>
-    </div>
-  </div>
-</div>
+    </div> -->
+
 <!-- recent_news_area_end  -->
 <div class="members"> 
    

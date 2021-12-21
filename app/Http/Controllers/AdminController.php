@@ -417,8 +417,18 @@ class AdminController extends Controller
         $today = Carbon::today();
         $event = Event::whereDate('startdate' ,'>', $today)
         ->get();
+        return view ('Front.Home')->with('event',$event);
+    }
+
+        //dd($event);
         
         // $response = ['message' => 'success', 'event' => $event];
-        return view('Home',['event'=> $event]);
-    }
+        //return view('Home',['event'=> $event]);
+        //$event = Event::whereDate('startdate' ,'>', $today)->get();
+        // $response = ['message' => 'success', 'event' => $event];
+        // return view ('Home' , ['events' => $event]);
+        //return view::make('Home' ,compact('event'));  
+        // view()->share('event',$event); 
+        // return view('Home'); 
+    
 }

@@ -22,7 +22,7 @@ Route::view('/admin/add-slots', 'welcome');
 Route::view('/admin/slots', 'welcome');
 Route::view('/admin/appointments', 'welcome');
 
-Route::view('/' , 'Front.Home');
+Route::any('/' , 'AdminController@get_coming_events');
 Route::view('/vision-mission' , 'Front.vision-mission');
 Route::view('/history' , 'Front.history');
 Route::view('/executive-committee' , 'Front.executive-committee');
