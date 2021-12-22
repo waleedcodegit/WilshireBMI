@@ -361,7 +361,7 @@ class AdminController extends Controller
         //
     }
     public function add_event(Request $request){
-        
+        // return $request;
         $validator = Validator::make($request->all(), [
             'eventname' => 'required',
             'image' => 'required',
@@ -378,6 +378,7 @@ class AdminController extends Controller
             $event->event_name = $request->eventname;
             $event->slug = strtolower(str_replace(' ', '-' , $request->eventname));
             $event->image = $request->image;
+            $event->video_youtube_id = $request->video_youtube_id;
             $event->description = $request->description;
             $event->startdate = $request->startdate;
             $event->enddate = $request->enddate;
@@ -402,9 +403,11 @@ class AdminController extends Controller
         $event->event_name = $request->eventname;
         $event->slug = strtolower(str_replace(' ', '-' , $request->eventname));
         $event->image = $request->image;
+        $event->video_youtube_id = $request->video_youtube_id;
         $event->description = $request->description;
         $event->startdate = $request->startdate;
         $event->enddate = $request->enddate;
+        // $event->file = $request->file;
         $event->save();
 
         return response()->json([

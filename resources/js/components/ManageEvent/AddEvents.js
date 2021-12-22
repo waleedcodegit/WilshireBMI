@@ -46,12 +46,31 @@ class AddEvents extends Component {
             startdate:e.target.value
         })
     }
-    // file(e){
-    //     this.setState({
-    //         file:e.target.value
-    //     })
+    File(e){
+        this.setState({
+            file:e.target.value
+        })
+    }
+    // File(event) {
+    //     if (event.target.files) {
+    //         const files = Array.from(event.target.files);
+    //         const promises = files.map(file => {
+    //             return (new Promise((resolve, reject) => {
+    //                 const reader = new FileReader();
+    //                 reader.addEventListener('load', (ev) => {
+    //                     resolve(ev.target.result);
+    //                 });
+    //                 reader.addEventListener('error', reject);
+    //                 reader.readAsDataURL(file);
+    //             }))
+    //         });
+    //         Promise.all(promises).then(images => {
+    //             this.setState({
+    //                 file: images[0]
+    //             })
+    //         }, error => { console.error(error); });
+    //     }
     // }
- 
     Image(event) {
         if (event.target.files) {
             const files = Array.from(event.target.files);
@@ -72,7 +91,11 @@ class AddEvents extends Component {
             }, error => { console.error(error); });
         }
     }
-  
+    youtube_id(e){
+        this.setState({
+            video_youtube_id:e.target.value
+        })
+    }
     add_event(){
      
                 Axios.post('/api/add_event',this.state).then(res=>{
@@ -111,12 +134,27 @@ class AddEvents extends Component {
                                 <input onChange={this.Image.bind(this)} type="file"  class="form-control "  aria-describedby="emailHelp"></input>
                                 <img src={this.state.image} style={{width:'50%'}}></img>
                             </div>
+                            {/* <div className="row col-md-12">
+                            <div class="form-group input_div col-md-12">
+                                <label className="input_label" for="exampleInputEmail1">Pdf file</label>
+                                <input onChange={this.File.bind(this)} type="file"  class="form-control "  aria-describedby="emailHelp"></input>
+                                <img src={this.state.image} style={{width:'50%'}}></img>
+                            </div>
+                        <h1 className="col-md-1"></h1>
+                       
+                   </div> */}
                              {/* <div class="form-group input_div col-md-6">
                                 <label className="input_label" for="exampleInputEmail1">PDF File</label>
                                 <input onChange={this.file.bind(this)} type="file"  class="form-control "  aria-describedby="emailHelp"></input>
                                 <img src={this.state.image} style={{width:'50%'}}></img>
                             </div>  */}
                            
+                        </div>
+                        <div className="row col-md-12">
+                            <div class="form-group input_div col-md-12">
+                            <label className="input_label" for="exampleInputEmail1">Youtube Video Id</label>
+                            <input  onChange={this.youtube_id.bind(this)} type="email" class="form-control " aria-describedby="emailHelp" />
+                            </div>
                         </div>
                         <div className="row col-md-12" style={{height:"50px"}}>
                         <div class="form-group input_div col-md-12">

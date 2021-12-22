@@ -17,6 +17,8 @@ class EditEvent extends Component {
             telephone:'',
             error_string:'',
             description: '' ,
+            file: '' ,
+            video_youtube_id:'',
             id:this.props.match.params.id // You can also pass a Quill Delta here
             
         }
@@ -31,6 +33,7 @@ class EditEvent extends Component {
                 startdate:res.data.startdate,
                 enddate:res.data.enddate,
                 image:res.data.image,
+                video_youtube_id:res.data.video_youtube_id,
             })
         })
      }
@@ -76,6 +79,36 @@ class EditEvent extends Component {
             }, error => { console.error(error); });
         }
     }
+    youtube_id(e){
+        this.setState({
+            video_youtube_id:e.target.value
+        })
+    }
+    File(e){
+        this.setState({
+            file:e.target.value
+        })
+    }
+    // File(event) {
+    //     if (event.target.files) {
+    //         const files = Array.from(event.target.files);
+    //         const promises = files.map(file => {
+    //             return (new Promise((resolve, reject) => {
+    //                 const reader = new FileReader();
+    //                 reader.addEventListener('load', (ev) => {
+    //                     resolve(ev.target.result);
+    //                 });
+    //                 reader.addEventListener('error', reject);
+    //                 reader.readAsDataURL(file);
+    //             }))
+    //         });
+    //         Promise.all(promises).then(images => {
+    //             this.setState({
+    //                 file: images[0]
+    //             })
+    //         }, error => { console.error(error); });
+    //     }
+    // }
   
     update_event(){
      
@@ -123,6 +156,19 @@ class EditEvent extends Component {
                                 <img src={this.state.image} style={{width:'50%'}}></img>
                             </div>
                            
+                        </div>
+                        {/* <div className="row col-md-12">
+                        <div class="form-group input_div col-md-12">
+                                <label className="input_label" for="exampleInputEmail1">Pdf file</label>
+                                <input onChange={this.File.bind(this)} type="file"  class="form-control "  aria-describedby="emailHelp"></input>
+                                <img src={this.state.image} style={{width:'50%'}}></img>
+                            </div>
+                            </div> */}
+                        <div className="row col-md-12">
+                            <div class="form-group input_div col-md-12">
+                            <label className="input_label" for="exampleInputEmail1">Youtube Video Id</label>
+                            <input  onChange={this.youtube_id.bind(this)} value={this.state.video_youtube_id} type="email" class="form-control " aria-describedby="emailHelp" />
+                            </div>
                         </div>
                         <div className="row col-md-12">
                         <div class="form-group input_div col-md-12">

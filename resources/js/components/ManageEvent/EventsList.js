@@ -32,7 +32,7 @@ class EventsList extends Component {
     //         event:res.data.event
     //     })
     // })  
-       
+    // video_youtube_id:res.data.,
     }
     search_slots(){
         Axios.post('/api/get_slots_by_date',this.state).then(res=>{
@@ -72,6 +72,7 @@ class EventsList extends Component {
                                         <td>Sr.</td>
                                        
                                         <td>Event Name</td>
+                                        <td>Video Id</td>
                                         <td>Slug</td>  
                                         <td>Start Time</td>
                                         <td>End Time</td>
@@ -88,6 +89,7 @@ class EventsList extends Component {
                                                 <tr key={index}>
                                                     <td>{index+1}</td>
                                                     <td>{data.event_name}</td>
+                                                    <td>{data.video_youtube_id}</td>
                                                     <td>{data.slug}</td>
                                                     <td>{data.startdate}</td>
                                                     <td>{data.enddate}</td>

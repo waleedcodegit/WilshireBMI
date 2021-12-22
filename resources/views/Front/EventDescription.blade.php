@@ -27,19 +27,119 @@
 {{-- </div> --}} 
 <section class="sample-text-area">
     <div class="container box_1170">
-        <h3 class="mb-300">Event Details</h3>
+      <h3 class="mb-30">{{$description->event_name}}</h3>
         <div class="video-sec">
+          
             <img src="{{$description->image}}" autostart="false" height="auto" width="100%" />
-            
-                  </div>
+            {{-- <div class="col-md-12 dia-sec" >
+              <embed src="{{$description->file}}" type="application/pdf" width="100%" height="600px" />
+              </div> --}}
+            {{-- <embed src="{{$description->file}}" width="800px" height="2100px" /> --}}
+              {{-- <iframe src="{{$description->file}}" style="width: 100%;height: 100%;border: none;"></iframe> --}}
+            {{-- <div class="col-md-12"> --}}
+              <blockquote class="generic-blockquote">
+            L – Learn about diabetes<br>
+                  E -Educate others<br>
+                  A -Achieve goals<br>
+            D – Defeat diabetes
+               </blockquote>
+            </div>
+                  {{-- </div> --}}
+                 
       <div class="">
         {{-- <h3 class="mb-30">Annual Conference of Endocrine Society of India</h3> --}}
         <div class="row">
             <div class="col-md-12 dia-sec" >
               
                {!! html_entity_decode($description->description) !!}
+               <div class="section-top-border">
+                <h3 class="mb-30">Organizing Committee</h3>
+                  <div class="progress-table-wrap">
+                    <div class="progress-table">
+                      <div class="table-head">
+                        <div class="serial">#</div>
+                        <div class="post-n">Post</div>
+                        <div class="doctor">Doctors</div>
+                      </div>
+                      <div class="table-row">
+                        <div class="serial">01</div>
+                        <div class="post-n"> National Patrons</div>
+                        <div class="doctor"> Dr. Sarita Bajaj (India) <br>
+                          Dr. Sanjay Kalra <br>
+                          Dr. Rakesh Sahay <br>
+                          Dr. Sujoy Ghosh<br>
+                          Dr. KVS Harikumar <br>
+                         </div>
+                      </div>
+                      <div class="table-row">
+                        <div class="serial">02</div>
+                        <div class="post-n"> International Patrons</div>
+                        <div class="doctor">
+                    Dr Noel Somasundaram<br>
+                    Dr. S. Abbas Raza<br>
+                    Dr. Faruque Pathan<br>
+                    Dr. A H Aamir<br>
+                    Dr. Faria Afsana<br>
+                    Dr. Prasad Katulanda<br>
+                    Dr. Ali Latheef<br>
+                    Dr. Robin Maskey<br>
+                    Dr. Ibrar Ahmed<br>
+                    Dr. Ahmad Zia<br>
+                    Dr. Mohammed Wali Naseri<br>
+                  
+                    </div>
+                      </div>
+                      <div class="table-row">
+                        <div class="serial">03</div>
+                        <div class="post-n"> Organizing Chairperson</div>
+                        <div class="doctor">
+                    Dr Dina Shrestha<br>
+                    Dr Ganapathi Bantwal 
+                    
+                    </div>
+                      </div>
+                      <div class="table-row">
+                        <div class="serial">04</div>
+                        <div class="post-n"> Scientific Chairperson</div>
+                        <div class="doctor">
+                    Dr. Shehla Shaikh<br>
+                    Dr. Saptarshi Bhattacharya
+                    </div>
+                      </div>
+                      <div class="table-row">
+                        <div class="serial">05</div>
+                        <div class="post-n"> Organizing Secretary</div>
+                        <div class="doctor">
+                    Dr. Nitin Kapoor<br>
+                    Dr. Arundhati Dasgupta
+                    </div>
+                      </div>
+                      <div class="table-row">
+                        <div class="serial">06</div>
+                        <div class="post-n"> Scientific Secretary </div>
+                        <div class="doctor"> Dr. Nalini Kopalle <br>
+                          Dr, Mohan T Shenoy <br>
+                          Dr. Anshita Aggarwal <br>
+                       </div>
+                      </div>
+                      <div class="table-row">
+                        <div class="serial">07</div>
+                        <div class="post-n">Scientific Co-secretary </div>
+                        <div class="doctor">Dr. Lakshmi Nagendra<br>
+                          Dr. Sunetra Mondal <br>
+                         </div>
+                      </div>
                
+                    </div>
+                  </div>
+                </div>
+               <iframe width="1120" height="500" controls autoplay
+               src="https://www.youtube.com/embed/{{$description->video_youtube_id}}">
+               </iframe>
           </div>
+          {{-- <iframe width="1200" height="500"
+          src="https://www.youtube.com/embed/tgbNymZ7vqY">
+          </iframe> --}}
              {{-- <div class="col-md-12 dia-sec" >
           <img src="{{$description->image}}">
           </div> --}}
