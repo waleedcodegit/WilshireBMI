@@ -133,8 +133,8 @@
                     </div>
                   </div>
                 </div>
-               <iframe width="1120" height="500" controls autoplay
-               src="https://www.youtube.com/embed/{{$description->video_youtube_id}}">
+               <iframe width="1120" height="500" allow='autoplay'
+               src="https://www.youtube.com/embed/{{$description->video_youtube_id}}?autoplay=1">
                </iframe>
           </div>
           {{-- <iframe width="1200" height="500"

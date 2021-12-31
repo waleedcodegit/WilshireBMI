@@ -26,6 +26,10 @@ class App extends Component {
             }
         })
     }
+    logout(){
+        window.localStorage.setItem('testapistring','');
+        window.location.reload();
+    }
     render() {
         return (
             <div >
@@ -43,6 +47,7 @@ class App extends Component {
                                 </a></li>
                                
                             </ul>
+                        
                         </div>
                         
                     </nav>
@@ -174,10 +179,25 @@ class App extends Component {
                                         </div>
                                     </div>
                                     <div className="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
+                                        <div className="row">
+                                            <div className="col-8">
                                         <a href="#" className="btn btn-icon icon-left btn-primary btn-restore-theme">
                                             <i className="fas fa-undo" /> Restore Default
                                         </a>
+                                        </div>
+                                       
+                                        <div className="col-3">
+                                        <a  onClick={this.logout.bind(this)}className="btn btn-outline-primary">
+                                            LogOut
+                                            
+                                        </a>
+                                        </div>
+                                        {/* <div className="col-1">
+                                        <i className=""  />LogOut
+                                        </div> */}
+                                        </div>
                                     </div>
+                                  
                                 </div>
                             </div>
                         </div>

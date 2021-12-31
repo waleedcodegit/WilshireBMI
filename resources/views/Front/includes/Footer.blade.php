@@ -26,7 +26,7 @@
       </div>
       <div class="col-lg-2 col-md-2"> </div>
       <div class="col-lg-3 col-md-5">
-        <div class="rt-sc"><p>Powered by: <a href="/https://www.wangardinternational.com/" target="_blank"><img src="img/logo-w.png"> </a></p></div>
+        <div class="rt-sc"><p>Powered by: <a href="/https://www.wangardinternational.com/" target="_blank"><img src="/img/logo-w.png"> </a></p></div>
       </div>
     </div>
   </div>
