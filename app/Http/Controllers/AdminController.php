@@ -12,7 +12,7 @@ use App\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Validator;
-use Banner;
+use App\Banner;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -390,9 +390,9 @@ class AdminController extends Controller
         }
     }
 
-    public function upload_banner(){
+    public function upload_banner(Request $request){
         $validator = Validator::make($request->all(), [
-            'banner_name' => 'required',
+            'bannername' => 'required',
             'image' => 'required',
         ]);
         if($validator->fails()){
@@ -401,7 +401,7 @@ class AdminController extends Controller
             return $response;
         }else{
             $banner = new Banner();
-            $banner->banner_name = $request->banner_name;
+            $banner->banner_name = $request->bannername;
             $banner->image = $request->image;
             $banner->save();
             $response = ['status' => 200 , 'msg' => 'banner added.'];

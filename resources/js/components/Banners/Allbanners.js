@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 
 
-class EventsList extends Component {
+class Allbanners extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -18,7 +18,7 @@ class EventsList extends Component {
             console.log(res);
             
             this.setState({
-                banners:res.data.banners
+                banners:res.data.banner
             })
         })
     }
@@ -43,18 +43,20 @@ class EventsList extends Component {
                                         <td>Sr.</td>
                                        
                                         <td>Banner Name</td>
-                                        <td>Image</td>    
+                                        <td>Image</td>
+                                        <td>Edit</td>
+                                        <td>Delete</td>    
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
-                                      this.state.event.length > 0? 
+                                      this.state.banners.length > 0? 
                                        this.state.banners.map((data,index)=>{
                                             return(
                                                 <tr key={index}>
                                                     <td>{index+1}</td>
                                                     <td>{data.banner_name}</td>
-                                                    <td><img src={data.image } style={{width:'100px'}}></img></td>
+                                                    <td><img src={data.image } style={{width:'500px', height:'300px'}}></img></td>
                                                    
                                                  
                                                      <td><Link to={`/admin/edit-banner/${data.id}`}><button className="btn btn-warning"> <i style={{color:'#ffffff'}} className="far fa-edit"> </i></button></Link></td>
@@ -75,4 +77,4 @@ class EventsList extends Component {
     }
 }
 
-export default EventsList;
+export default Allbanners;

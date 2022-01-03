@@ -43,8 +43,8 @@ Route::post('/get_coming_events', 'AdminController@get_coming_events');
 Route::post('/upload_banner' , 'AdminController@upload_banner');
 Route::post('/get_banners' , 'AdminController@get_banners');
 Route::post('/delete_banner' , 'AdminController@delete_banner');
-Route::post('/get_banner_by_id' , 'AdminControlelr@get_banner_by_id');
-Route::post('update-banner' , 'AdminControlelr@update-banner');
+Route::post('/get_banner_by_id' , 'AdminController@get_banner_by_id');
+Route::post('/update_banner' , 'AdminController@update_banner');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

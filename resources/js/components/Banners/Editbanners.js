@@ -12,7 +12,6 @@ class Editbanner extends Component {
             bannername:'',
             image:'',
             id:this.props.match.params.id // You can also pass a Quill Delta here
-            
         }
        
     }
@@ -20,14 +19,14 @@ class Editbanner extends Component {
         Axios.post('/api/get_banner_by_id',{ id:this.props.match.params.id}).then(res=>{
             console.log(res);
             this.setState({
-                bannername:res.data.bannername,
+                bannername:res.data.banner_name,
                 image:res.data.image,
             })
         })
      }
     Bannername(e){
         this.setState({
-            eventname:e.target.value
+            bannername:e.target.value
         })
     }
     Image(event) {
@@ -56,7 +55,7 @@ class Editbanner extends Component {
             console.log(res);
             if(res.data.status == 200){
                 toast.success('Banner Updated SuccessFully');
-                this.props.history.push('/admin/all-banners');
+                this.props.history.push('/admin/list-banners');
             }else{
                 this.setState({
                     error_string:res.data.message

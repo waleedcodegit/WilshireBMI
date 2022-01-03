@@ -48,7 +48,7 @@ class Addbanners extends Component {
         Axios.post('/api/upload_banner',this.state).then(res=>{
                 console.log(res);
                 if(res.data.status){
-                  toast.success('Events Added SuccessFully');
+                  toast.success('Banner Added SuccessFully');
                   this.props.history.push('/admin/list-banners');
                 }else{
                     this.setState({

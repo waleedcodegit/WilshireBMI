@@ -99713,7 +99713,7 @@ var Addbanners = /*#__PURE__*/function (_Component) {
         console.log(res);
 
         if (res.data.status) {
-          react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success('Events Added SuccessFully');
+          react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success('Banner Added SuccessFully');
 
           _this3.props.history.push('/admin/list-banners');
         } else {
@@ -99825,15 +99825,15 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var EventsList = /*#__PURE__*/function (_Component) {
-  _inherits(EventsList, _Component);
+var Allbanners = /*#__PURE__*/function (_Component) {
+  _inherits(Allbanners, _Component);
 
-  var _super = _createSuper(EventsList);
+  var _super = _createSuper(Allbanners);
 
-  function EventsList(props) {
+  function Allbanners(props) {
     var _this;
 
-    _classCallCheck(this, EventsList);
+    _classCallCheck(this, Allbanners);
 
     _this = _super.call(this, props);
     _this.state = {
@@ -99842,7 +99842,7 @@ var EventsList = /*#__PURE__*/function (_Component) {
     return _this;
   }
 
-  _createClass(EventsList, [{
+  _createClass(Allbanners, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -99851,7 +99851,7 @@ var EventsList = /*#__PURE__*/function (_Component) {
         console.log(res);
 
         _this2.setState({
-          banners: res.data.banners
+          banners: res.data.banner
         });
       });
     }
@@ -99886,13 +99886,14 @@ var EventsList = /*#__PURE__*/function (_Component) {
         style: {
           fontWeight: 'bold'
         }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Sr."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Banner Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Image"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.event.length > 0 ? this.state.banners.map(function (data, index) {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Sr."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Banner Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Image"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Delete"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.banners.length > 0 ? this.state.banners.map(function (data, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           key: index
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, index + 1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, data.banner_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: data.image,
           style: {
-            width: '100px'
+            width: '500px',
+            height: '300px'
           }
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/admin/edit-banner/".concat(data.id)
@@ -99916,10 +99917,10 @@ var EventsList = /*#__PURE__*/function (_Component) {
     }
   }]);
 
-  return EventsList;
+  return Allbanners;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (EventsList);
+/* harmony default export */ __webpack_exports__["default"] = (Allbanners);
 
 /***/ }),
 
@@ -100003,7 +100004,7 @@ var Editbanner = /*#__PURE__*/function (_Component) {
         console.log(res);
 
         _this2.setState({
-          bannername: res.data.bannername,
+          bannername: res.data.banner_name,
           image: res.data.image
         });
       });
@@ -100012,7 +100013,7 @@ var Editbanner = /*#__PURE__*/function (_Component) {
     key: "Bannername",
     value: function Bannername(e) {
       this.setState({
-        eventname: e.target.value
+        bannername: e.target.value
       });
     }
   }, {
@@ -100052,7 +100053,7 @@ var Editbanner = /*#__PURE__*/function (_Component) {
         if (res.data.status == 200) {
           react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success('Banner Updated SuccessFully');
 
-          _this4.props.history.push('/admin/all-banners');
+          _this4.props.history.push('/admin/list-banners');
         } else {
           _this4.setState({
             error_string: res.data.message
