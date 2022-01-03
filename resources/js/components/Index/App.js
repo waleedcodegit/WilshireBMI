@@ -71,6 +71,13 @@ class App extends Component {
                                         <li><Link className="nav-link" to="/admin/list-events">Events List</Link></li>
                                     </ul>
                                 </li>
+                                <li className="dropdown">
+                                    <a href="#" className="menu-toggle nav-link has-dropdown"><i data-feather="briefcase" /><span>Manage Banners</span></a>
+                                    <ul className="dropdown-menu">
+                                        <li><Link className="nav-link" to="/admin/add-banners">Add Banners</Link></li>
+                                        <li><Link className="nav-link" to="/admin/list-banners">All Banners</Link></li>
+                                    </ul>
+                                </li>
                                 {/* <li className="dropdown">
                                     <a href="#" className="menu-toggle nav-link has-dropdown"><i data-feather="briefcase" /><span>Manage Slots</span></a>
                                     <ul className="dropdown-menu">

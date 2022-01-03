@@ -12,6 +12,7 @@ use App\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Validator;
+use Banner;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -388,6 +389,54 @@ class AdminController extends Controller
             return $response;
         }
     }
+
+    public function upload_banner(){
+        $validator = Validator::make($request->all(), [
+            'banner_name' => 'required',
+            'image' => 'required',
+        ]);
+        if($validator->fails()){
+            $response = ['status' => 219 , 'msg' => $validator->errors()->first() , 
+            'errors' => $validator->errors()];
+            return $response;
+        }else{
+            $banner = new Banner();
+            $banner->banner_name = $request->banner_name;
+            $banner->image = $request->image;
+            $banner->save();
+            $response = ['status' => 200 , 'msg' => 'banner added.'];
+            return $response;
+        }
+    }
+
+    public function get_banners(){
+        $banner = Banner::all();
+        $response = ['message' => 'success', 'banner' => $banner];
+        return $response;
+    }
+
+    public function delete_banner(Request $request){
+        $banner = Banner::find($request->id);
+        $banner->delete();
+    }
+    
+    public function get_banner_by_id(Request $request){
+        $banner = Banner::find($request->id);
+        return $banner;
+    }
+
+    public function update_banner(Request $request){
+        $banner = Banner::find($request->id);
+        $banner->banner_name = $request->bannername;
+        $banner->image = $request->image;
+        $banner->save();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Banner Updated Successfully',
+        ]);
+    }
+
     public function get_events(){
         $event = Event::all();
         $response = ['message' => 'success', 'event' => $event];
@@ -436,21 +485,22 @@ class AdminController extends Controller
         //return view::make('Home' ,compact('event'));  
         // view()->share('event',$event); 
         // return view('Home'); 
-        public function get_event_description(Request $request){
+    public function get_event_description(Request $request){
         
-            $description = Event::where('slug',$request->slug)->first();
+        $description = Event::where('slug',$request->slug)->first();
             if($description){
                 // dd($description);
                 return view ('Front.EventDescription')->with('description',$description);
                 // return $description;
             }
         }
-        public function get_all_events(){
-            $event = Event::all();
+    public function get_all_events(){
+        $event = Event::all();
             if($event){
                 // dd($event);
             return view ('Front.diabetes-events')->with('event',$event);
         }
     }
+    
     
 }

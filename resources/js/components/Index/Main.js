@@ -10,6 +10,9 @@ import ManageSlot from '../ManageSlots/ManageSlot';
 import AddEvents from '../ManageEvent/AddEvents';
 import EventsList from '../ManageEvent/EventsList';
 import EditEvents from '../ManageEvent/Editevents';
+import Addbanners from '../Banners/Addbanners';
+import Allbanners from '../Banners/Allbanners';
+import Editbanner from '../Banners/Editbanners';
  
 class Main extends Component {
     constructor(props) {
@@ -31,6 +34,11 @@ class Main extends Component {
                 <Route  path="/admin/add-events" component={AddEvents}></Route>
                 <Route path="/admin/list-events" component={EventsList}></Route>
                 <Route path="/admin/edit-events/:id" component={EditEvents}></Route>
+
+                <Route path="/admin/add-banners" component={Addbanners}></Route>
+                <Route path="/admin/list-banners" component={Allbanners}></Route>
+                <Route path="/admin/edit-banner/:id" component={Editbanner}></Route>
+
 
             </div>
         );

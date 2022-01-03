@@ -14,6 +14,10 @@ Route::view('/admin/add-events', 'welcome');
 Route::view('/admin/list-events', 'welcome');
 Route::view('/admin/edit-events/{id}', 'welcome');
 
+Route::view('/admin/add-banners' , 'welcome');
+Route::view('/admin/list-banners' , 'welcome');
+Route::view('/admin/edit-banner/{id}' , 'welcome');
+
 Route::view('/admin/add-user', 'welcome');
 Route::view('/admin/edit-user/{id}', 'welcome');
 Route::view('/admin/users', 'welcome');

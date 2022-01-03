@@ -40,6 +40,12 @@ Route::post('/delete_event', 'AdminController@delete_event');
 // Route::post('/get_all_events', 'AdminController@get_all_events');
 Route::post('/get_coming_events', 'AdminController@get_coming_events');
 
+Route::post('/upload_banner' , 'AdminController@upload_banner');
+Route::post('/get_banners' , 'AdminController@get_banners');
+Route::post('/delete_banner' , 'AdminController@delete_banner');
+Route::post('/get_banner_by_id' , 'AdminControlelr@get_banner_by_id');
+Route::post('update-banner' , 'AdminControlelr@update-banner');
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
