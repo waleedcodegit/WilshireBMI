@@ -31,7 +31,7 @@
                           <li><a href="/vision-mission">Vision & Mission</a></li>
                           <li><a href="/history">History</a></li>
                           <li><a href="/executive-committee">Executive Committee</a></li>
-                          <li><a href="/#">President Message</a></li>
+                          <li><a href="/president-message">President Message</a></li>
                           <li><a href="/members">Member Societies</a></li>
                         </ul>
                       </li>

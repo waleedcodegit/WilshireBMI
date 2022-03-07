@@ -39,6 +39,8 @@ Route::view('/PMMSG' , 'Front.PMMSG');
 Route::view('/events' , 'Front.events');
 Route::view('/diabetes-events' , 'Front.diabetes-events');
 Route::view('/contact' , 'Front.contact');
+Route::view('/president-message' , 'Front.PresidentMessage');
+
 
 // Route::get('/admin', function () {
 
